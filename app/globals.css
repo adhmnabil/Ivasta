@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gray-950 text-white overflow-x-hidden;
+  }
+}
+
+@layer utilities {
+  .bg-grid-pattern {
+    background-image: 
+      linear-gradient(rgba(147, 51, 234, 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(147, 51, 234, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 0.1;
+  }
+  25% {
+    transform: translate(20px, -30px) rotate(5deg);
+    opacity: 0.15;
+  }
+  50% {
+    transform: translate(-15px, -60px) rotate(-5deg);
+    opacity: 0.2;
+  }
+  75% {
+    transform: translate(25px, -40px) rotate(3deg);
+    opacity: 0.15;
+  }
+}
+
+.animate-float {
+  animation: float linear infinite;
+}
+
+@keyframes letterSlide {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-letter-slide {
+  opacity: 0;
+  animation: letterSlide 0.6s ease-out forwards;
+}
+
+body {
+  overflow-x: hidden;
+}
